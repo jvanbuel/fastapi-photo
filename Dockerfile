@@ -13,5 +13,5 @@ COPY . .
 
 RUN pip install -e . 
 
-ENTRYPOINT ["uvicorn"]
-CMD ["src.fastapi_photo.app:app", "--host", "0.0.0.0", "--port", "80", "--log-config", "log_config.yaml"]
+ENTRYPOINT ["gunicorn"]
+CMD ["src.fastapi_photo.app:app"]

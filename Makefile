@@ -20,7 +20,7 @@ clean:
 
 
 locust-headless:
-	cd load_test && locust --headless --users 40 --spawn-rate 1 -H http://127.0.0.1:80
+	cd load_test && locust --headless --users 10 --spawn-rate 1 -H http://127.0.0.1:80
 
 locust:
 	cd load_test && locust
