@@ -1,6 +1,8 @@
+import base64
+
 from fastapi import FastAPI
 from pydantic import BaseModel
-import base64
+
 
 class Photo(BaseModel):
     photo_base64: bytes
