@@ -1,2 +1,11 @@
 .venv
 *.jpg
+*.tfvars
+.terraform
+
+*.tfstate*
+
+__pycache__
+*.pyc
+__pycache__
+.DS_Store

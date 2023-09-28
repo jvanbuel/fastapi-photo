@@ -8,7 +8,11 @@ build: export
 	docker build -t fastapi-photo --platform linux/amd64 . 
 
 run: build
-	docker run -ti --rm -p 80:80 -v $(CURDIR)/data:/app/data fastapi-photo
+	docker run -ti --rm -p 80:80 -v $(CURDIR)/data:/app/data \
+	-e AZURE_TENANT_ID=$$AZURE_TENANT_ID \
+	-e AZURE_CLIENT_ID=$$AZURE_CLIENT_ID \
+	-e AZURE_CLIENT_SECRET=$$AZURE_CLIENT_SECRET \
+	fastapi-photo
 
 
 clean:
