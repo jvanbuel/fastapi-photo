@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "fastapi-photo"
+version = "0.1.0"
+description = ""
+authors = ["Jan Vanbuel <janvanbuel@hotmail.com>"]
+readme = "README.md"
+packages = [{include = "src/fastapi_photo"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.103.1"
+uvicorn = {extras = ["standard"], version = "^0.23.2"}
+pydantic = "^2.4.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
