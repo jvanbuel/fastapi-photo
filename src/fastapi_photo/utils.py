@@ -31,3 +31,12 @@ raw_client, clean_client = (
     ).get_container_client(container)
     for container in ("raw", "clean")
 )
+
+
+async def write_to_blob(client: BlobServiceClient, data: bytes, name: str) -> None:
+    logger.info(f"Writing {name} to blob")
+    await client.get_blob_client(name).upload_blob(
+        data,
+        overwrite=True,
+    )
+    logger.info(f"Finished writing {name} to blob")
